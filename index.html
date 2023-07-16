@@ -27,45 +27,65 @@
   </head>
   <body>
     <div class="container">
-      <div class="dateofbird">
-        <form name="birthday">
-          <div class="input-group">
-            <label for="day">DAY</label>
-            <input
-              type="text"
-              name="day"
-              id="day"
-              class="input-day"
-              placeholder="0"
-            />
-            <small id="alert-day" class="hidden">ss</small>
-          </div>
-          <div class="input-group">
-            <label for="month">MOUTH</label>
-            <input type="text" name="month" id="month" c placeholder="0" />
-            <small id="alert-month" class="alert-month"></small>
-          </div>
-          <div class="input-group">
-            <label for="year">YEAR</label>
-            <input type="text" name="year" id="year" placeholder="0" />
-            <small id="alert-year" class="alert-year"></small>
-          </div>
-          <div>
-            <button type="button" name="submit" onclick="calculateAge()">
-              SUB
-            </button>
-          </div>
-        </form>
-      </div>
+      <form name="birthday">
+        <div class="input-group">
+          <label for="day">DAY</label>
+          <input
+            type="text"
+            name="day"
+            id="day"
+            class="input-day"
+            placeholder="DD"
+            minlength="0"
+            maxlength="2"
+            size="1"
+          />
+          <small id="alert-day" class="hidden">alert</small>
+        </div>
+        <div class="input-group">
+          <label for="month">MONTH</label>
+          <input
+            type="text"
+            name="month"
+            id="month"
+            c
+            placeholder="MM"
+            minlength="0"
+            maxlength="2"
+            size="1"
+          />
+          <small id="alert-month" class="hidden">alert</small>
+        </div>
+        <div class="input-group">
+          <label for="year">YEAR</label>
+          <input
+            type="text"
+            name="year"
+            id="year"
+            placeholder="YYYY"
+            minlength="0"
+            maxlength="4"
+            size="1"
+          />
+          <small id="alert-year" class="hidden">alert</small>
+        </div>
+        <div></div>
+      </form>
 
-      <div id="totalYears">
-        <h1>years</h1>
+      <button class="btn" type="button" name="submit" onclick="calculateAge()">
+        Submit
+      </button>
+
+      <hr />
+
+      <div class="years" id="totalYears">
+        <h1>Years</h1>
       </div>
-      <div id="totalMonths">
-        <h1>months</h1>
+      <div class="months" id="totalMonths">
+        <h1>Months</h1>
       </div>
-      <div id="totalDays">
-        <h1>days</h1>
+      <div class="days" id="totalDays">
+        <h1>Days</h1>
       </div>
     </div>
 

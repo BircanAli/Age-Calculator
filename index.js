@@ -31,11 +31,25 @@ let fullMonth = [
   "31",
 ];
 
-function alertMessage(field) {
+function alertMessage(field, message) {
   field.classList.add("input-alert-active");
   field.previousElementSibling.classList.add("alert-text-active");
   field.nextElementSibling.classList.add("alert-text-active");
-  field.nextElementSibling.innerHTML = "please enter valid day";
+  field.nextElementSibling.innerHTML = message;
+}
+
+function alertMessages(fields) {
+  fields.forEach((field) => {
+    field.classList.add("input-alert-active");
+    field.previousElementSibling.classList.add("alert-text-active");
+    field.nextElementSibling.classList.add("alert-text-active");
+    field.nextElementSibling.innerHTML = "The field is required";
+  });
+}
+function resetAlerts(fields) {
+  fields.forEach((field) => {
+    field.resetAlert(field);
+  });
 }
 
 function resetAlert(field) {
@@ -48,7 +62,7 @@ function resetAlert(field) {
 function resetInputs() {
   dayInput.value = null;
   monthInput.value = null;
-  yearInput.value = null;
+  yearInput.value = "";
 }
 
 function renderDays(dayValue) {
@@ -81,31 +95,50 @@ function renderMonthsYears(monthValue, yearValue) {
 }
 
 let isValidate = false;
-
+console.log(isValidate);
 function validateAge(dayValue, monthValue, yearValue, daysOfSelectedMonth) {
-  if (!dayInput.value || dayValue <= 0 || dayValue > daysOfSelectedMonth) {
-    // dayInput.classList.add("input-alert-active");
-    // dayInput.previousElementSibling.classList.add("alert-text-active");
-    // dayInput.nextElementSibling.classList.add("alert-text-active");
-    // dayInput.nextElementSibling.innerHTML = "please enter valid day";
-    alertMessage(dayInput);
+  if (!dayInput.value && !monthInput.value && !yearInput.value) {
+    (isValidate = false), alertMessages([dayInput, monthInput, yearInput]);
+  } else {
+    isValidate = true;
+  }
+  console.log(isValidate); //false
+
+  if (
+    !dayInput.value ||
+    dayValue <= 0 ||
+    dayValue > daysOfSelectedMonth ||
+    dayValue >= 32
+  ) {
+    alertMessage(dayInput, "Must be valid date");
     isValidate = false;
+    console.log(isValidate); //false
+  } else {
+    isValidate = true;
+  }
+  if (!monthInput.value || monthValue <= 0 || monthValue > 12) {
+    alertMessage(monthInput, "Must be valid year");
+    isValidate = false;
+    console.log(isValidate);
+  } else {
+    isValidate = true;
+  }
+  if (!dayInput.value || dayValue > daysOfSelectedMonth) {
+    alertMessage(dayInput, "Must be valid date");
+    isValidate = false;
+    console.log(isValidate); // false
+  } else {
+    isValidate = true;
+  }
+  console.log(isValidate);
+  if (!yearInput.value || yearValue < 1900 || yearValue > currentYear) {
+    alertMessage(yearInput, "Must be valid year");
+    isValidate = false;
+    console.log(isValidate); //
+  }
 
-    if (!monthInput.value || monthValue <= 0 || monthValue > 12) {
-      // monthInput.classList.add("input-alert-active");
-      // monthInput.previousElementSibling.classList.add("alert-text-active");
-      // monthInput.nextElementSibling.classList.add("alert-text-active");
-      // monthInput.nextElementSibling.innerHTML = "please enter valid month";
-      alertMessage(monthInput);
-      isValidate = false;
-
-      if (!yearValue || yearValue < 1900 || yearValue > currentYear) {
-        alertMessage(yearInput);
-        isValidate = false;
-      }
-    }
-  } else return (isValidate = true);
-  // isValidate = !isValidate;
+  console.log(isValidate); // false
+  return isValidate;
 }
 
 dayInput.addEventListener("input", function () {
@@ -124,13 +157,17 @@ function calculateAge() {
   let dayValue = dayInput.value;
   let monthValue = monthInput.value;
   let yearValue = yearInput.value;
-  let daysOfSelectedMonth = +fullMonth[monthValue - 1];
 
+  let daysOfSelectedMonth = +fullMonth[monthValue - 1];
   validateAge(dayValue, monthValue, yearValue, daysOfSelectedMonth);
 
+  console.log(isValidate); // false
   if (isValidate) {
+    console.log(isValidate);
     renderDays(dayValue);
     renderMonthsYears(monthValue, yearValue);
+    resetAlert(dayInput, monthInput, yearInput);
     resetInputs();
+    isValidate = true;
   }
 }
