@@ -126,3 +126,11 @@ small {
   font-family: Poppins-Italic, sans-serif;
   font-size: 1.2em;
 }
+
+.btn {
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 20px;
+}

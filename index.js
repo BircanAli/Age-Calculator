@@ -95,14 +95,13 @@ function renderMonthsYears(monthValue, yearValue) {
 }
 
 let isValidate = false;
-console.log(isValidate);
+
 function validateAge(dayValue, monthValue, yearValue, daysOfSelectedMonth) {
   if (!dayInput.value && !monthInput.value && !yearInput.value) {
     (isValidate = false), alertMessages([dayInput, monthInput, yearInput]);
   } else {
     isValidate = true;
   }
-  console.log(isValidate); //false
 
   if (
     !dayInput.value ||
@@ -112,32 +111,27 @@ function validateAge(dayValue, monthValue, yearValue, daysOfSelectedMonth) {
   ) {
     alertMessage(dayInput, "Must be valid date");
     isValidate = false;
-    console.log(isValidate); //false
   } else {
     isValidate = true;
   }
   if (!monthInput.value || monthValue <= 0 || monthValue > 12) {
     alertMessage(monthInput, "Must be valid year");
     isValidate = false;
-    console.log(isValidate);
   } else {
     isValidate = true;
   }
   if (!dayInput.value || dayValue > daysOfSelectedMonth) {
     alertMessage(dayInput, "Must be valid date");
     isValidate = false;
-    console.log(isValidate); // false
   } else {
     isValidate = true;
   }
-  console.log(isValidate);
+
   if (!yearInput.value || yearValue < 1900 || yearValue > currentYear) {
     alertMessage(yearInput, "Must be valid year");
     isValidate = false;
-    console.log(isValidate); //
   }
 
-  console.log(isValidate); // false
   return isValidate;
 }
 
@@ -161,9 +155,7 @@ function calculateAge() {
   let daysOfSelectedMonth = +fullMonth[monthValue - 1];
   validateAge(dayValue, monthValue, yearValue, daysOfSelectedMonth);
 
-  console.log(isValidate); // false
   if (isValidate) {
-    console.log(isValidate);
     renderDays(dayValue);
     renderMonthsYears(monthValue, yearValue);
     resetAlert(dayInput, monthInput, yearInput);
