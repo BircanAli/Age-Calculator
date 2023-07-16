@@ -1,0 +1,17 @@
+.hidden {
+  display: none;
+}
+
+.alert-text-active {
+  display: inline;
+  color: red;
+}
+
+input[type="text"] {
+  outline: none;
+}
+
+.input-alert-active[type="text"] {
+  border: none;
+  outline: 1px solid red;
+}

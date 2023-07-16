@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.22.5"
+  },
+  "name": "age-calculator-app-main",
+  "description": "![Design preview for the Age calculator app coding challenge](./design/desktop-preview.jpg)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BircanAli/Age-Calculator.git"
+  },
+  "author": "Birdzhan Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BircanAli/Age-Calculator/issues"
+  },
+  "homepage": "https://github.com/BircanAli/Age-Calculator#readme"
+}
