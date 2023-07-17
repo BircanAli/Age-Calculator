@@ -115,7 +115,7 @@ function validateAge(dayValue, monthValue, yearValue, daysOfSelectedMonth) {
     isValidate = true;
   }
   if (!monthInput.value || monthValue <= 0 || monthValue > 12) {
-    alertMessage(monthInput, "Must be valid year");
+    alertMessage(monthInput, "Must be valid month");
     isValidate = false;
   } else {
     isValidate = true;

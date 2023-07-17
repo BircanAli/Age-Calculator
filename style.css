@@ -68,25 +68,25 @@ input[type="text"] {
 }
 
 html {
+  font-size: 62.5%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 
 body {
-  font-size: 62.5%;
+  font-size: 12px;
   font-family: Poppins-Regular, sans-serif;
   background-color: hsl(0, 0%, 94%);
+  line-height: 1;
 }
 
 .container {
   max-width: 144rem;
   text-align: center;
-  margin: 10rem 35rem;
+  margin: 10rem 20rem;
   background-color: hsl(0, 0%, 100%);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 1rem 1rem 8rem 2rem;
 
 }
@@ -108,23 +108,24 @@ form {
 
 label {
   font-family: Poppins-Bold;
+  font-size: 1rem;
   color: hsl(0, 1%, 44%);
   letter-spacing: 2.5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 input {
   color: hsl(0, 0%, 8%);
   font-family: Poppins-Bold;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: 0.5rem;
+  font-size: 3.2rem;
   border: 1px solid hsl(0, 0%, 86%);
   border-radius: 0.5rem;
 }
 
 small {
   font-family: Poppins-Italic, sans-serif;
-  font-size: 1.2em;
+  font-size: 0.8rem;
 }
 
 .btn-container {
@@ -156,7 +157,7 @@ small {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  line-height: 0.1rem;
+  line-height: 0.1;
 }
 
 
@@ -177,4 +178,40 @@ small {
   font-family: Poppins-Extra-Bold, sans-serif;
 
 
+}
+
+@media (max-width: 53em) {
+  html {
+    font-size: 52%;
+  }
+}
+
+@media (max-width: 47em) {
+  html {
+    font-size: 47%
+  }
+}
+
+@media (max-width: 41em) {
+  html {
+    font-size: 40%
+  }
+}
+
+@media (max-width: 35em) {
+  html {
+    font-size: 36%
+  }
+}
+
+@media (max-width: 32em) {
+  html {
+    font-size: 30%
+  }
+}
+
+@media (max-width: 26em) {
+  html {
+    font-size: 20%
+  }
 }
