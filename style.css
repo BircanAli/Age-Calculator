@@ -84,7 +84,7 @@ body {
 .container {
   max-width: 144rem;
   text-align: center;
-  margin: 10rem 20rem;
+  margin: 20rem 20rem;
   background-color: hsl(0, 0%, 100%);
   padding: 3rem;
   border-radius: 1rem 1rem 8rem 2rem;
