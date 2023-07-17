@@ -7,6 +7,10 @@ const dayOutput = document.querySelector("#totalDays");
 const monthOutput = document.querySelector("#totalMonths");
 const yearOutput = document.querySelector("#totalYears");
 
+const numDays = document.querySelector(".num-days");
+const numMonths = document.querySelector(".num-months");
+const numYears = document.querySelector(".num-years");
+
 let currentTime = new Date();
 let currentDay = currentTime.getDate();
 let currentMonth = currentTime.getMonth() + 1;
@@ -67,30 +71,26 @@ function resetInputs() {
 
 function renderDays(dayValue) {
   if (dayValue >= currentDay) {
-    dayOutput.innerHTML = `<h1>${dayValue - currentDay} Days</h1>`;
+    numDays.textContent = `${dayValue - currentDay}`;
   } else {
-    dayOutput.innerHTML = `<h1>${Math.abs(dayValue - currentDay)} Days</h1>`;
+    numDays.textContent = `${Math.abs(dayValue - currentDay)}`;
   }
 }
 
 function renderMonthsYears(monthValue, yearValue) {
   if (monthValue < currentMonth) {
-    monthOutput.innerHTML = `<h1>${Math.abs(
-      monthValue - currentMonth
-    )} Months</h1>`;
-    yearOutput.innerHTML = `<h1>${currentYear - yearValue} Years</h1>`;
+    numMonths.textContent = `${Math.abs(monthValue - currentMonth)}`;
+    numYears.textContent = `${currentYear - yearValue}`;
   }
 
   if (monthValue == currentMonth) {
-    monthOutput.innerHTML = `<h1>${monthValue - currentMonth} Months</h1>`;
-    yearOutput.innerHTML = `<h1>${currentYear - yearValue} Years</h1>`;
+    numMonths.textContent = `${monthValue - currentMonth}`;
+    numYears.textContent = `${currentYear - yearValue}`;
   }
 
   if (monthValue > currentMonth) {
-    monthOutput.innerHTML = `<h1>${Math.abs(
-      +monthValue - +currentMonth - 12
-    )} Months</h1>`;
-    yearOutput.innerHTML = `<h1>${currentYear - yearValue - 1} Years</h1>`;
+    numMonths.textContent = `${Math.abs(+monthValue - +currentMonth - 12)}`;
+    numYears.textContent = `${currentYear - yearValue - 1}`;
   }
 }
 

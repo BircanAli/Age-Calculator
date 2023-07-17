@@ -72,20 +72,30 @@
         <div></div>
       </form>
 
-      <div type="button" onclick="calculateAge()">
-        <img class="btn" src="assets/images/icon-arrow.svg" alt="button icon" />
+      <div class="btn-container">
+        <span class="line"></span>
+        <img
+          onclick="calculateAge()"
+          class="btn"
+          type="button"
+          src="assets/images/icon-arrow.svg"
+          alt="button icon"
+        />
       </div>
 
-      <hr />
-
-      <div class="years" id="totalYears">
-        <h1>Years</h1>
-      </div>
-      <div class="months" id="totalMonths">
-        <h1>Months</h1>
-      </div>
-      <div class="days" id="totalDays">
-        <h1>Days</h1>
+      <div class="output-container">
+        <div id="totalYears">
+          <h1 class="num-years">--</h1>
+          <h1 class="output">years</h1>
+        </div>
+        <div id="totalMonths">
+          <h1 class="num-months">--</h1>
+          <h1 class="output">months</h1>
+        </div>
+        <div id="totalDays">
+          <h1 class="num-days">--</h1>
+          <h1 class="output">days</h1>
+        </div>
       </div>
     </div>
 
