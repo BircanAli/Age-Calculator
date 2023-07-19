@@ -122,7 +122,7 @@ form {
   gap: 1rem;
   margin-bottom: 1rem;
   margin-right: 15rem;
-  position: relative;
+
 }
 
 .input-group {
@@ -130,11 +130,12 @@ form {
   justify-items: flex-start;
   align-items: center;
   margin-right: 1rem;
+  position: relative;
 }
 
 label {
   font-family: Poppins-Bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: hsl(0, 1%, 44%);
   letter-spacing: 2.5px;
   margin-bottom: 0.5rem;
@@ -155,7 +156,7 @@ small {
   text-align: center;
 
   font-family: Poppins-Italic, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   position: absolute;
   bottom: -20%;
 
@@ -246,13 +247,12 @@ small {
   }
 
 
-
   .output {
     margin-left: 3rem;
   }
 }
 
-/* 
+
 @media (max-width: 35em) {
   html {
     font-size: 36%
@@ -264,15 +264,11 @@ small {
     font-size: 30%
   }
 
+  small {
+    font-size: 1.3rem;
+  }
 
   .output {
     margin-left: 5rem;
   }
 }
-
-@media (max-width: 26em) {
-  html {
-    font-size: 20%
-  }
-}
- */
