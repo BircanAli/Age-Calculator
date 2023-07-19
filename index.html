@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -13,90 +12,81 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Age calculator app</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    <div class="container">
-      <form name="birthday">
-        <div class="input-group">
-          <label for="day">DAY</label>
-          <input
-            type="text"
-            name="day"
-            id="day"
-            class="input-day"
-            placeholder="DD"
-            minlength="0"
-            maxlength="2"
-            size="1"
-          />
-          <small id="alert-day" class="hidden">alert</small>
-        </div>
-        <div class="input-group">
-          <label for="month">MONTH</label>
-          <input
-            type="text"
-            name="month"
-            id="month"
-            placeholder="MM"
-            minlength="0"
-            maxlength="2"
-            size="1"
-          />
-          <small id="alert-month" class="hidden">alert</small>
-        </div>
-        <div class="input-group">
-          <label for="year">YEAR</label>
-          <input
-            type="text"
-            name="year"
-            id="year"
-            placeholder="YYYY"
-            minlength="0"
-            maxlength="4"
-            size="1"
-          />
-          <small id="alert-year" class="hidden">alert</small>
-        </div>
-        <div></div>
-      </form>
+    <main>
+      <section class="container">
+        <form name="birthday">
+          <div class="input-group">
+            <label for="day">DAY</label>
+            <input
+              type="text"
+              name="day"
+              id="day"
+              class="input-day"
+              placeholder="DD"
+              minlength="0"
+              maxlength="2"
+              size="1"
+            />
+            <small id="alert-day" class="hidden">alert</small>
+          </div>
+          <div class="input-group">
+            <label for="month">MONTH</label>
+            <input
+              type="text"
+              name="month"
+              id="month"
+              placeholder="MM"
+              minlength="0"
+              maxlength="2"
+              size="1"
+            />
+            <small id="alert-month" class="hidden">alert</small>
+          </div>
+          <div class="input-group">
+            <label for="year">YEAR</label>
+            <input
+              type="text"
+              name="year"
+              id="year"
+              placeholder="YYYY"
+              minlength="0"
+              maxlength="4"
+              size="1"
+            />
+            <small id="alert-year" class="hidden">alert</small>
+          </div>
+          <div></div>
+        </form>
 
-      <div class="btn-container">
-        <span class="line"></span>
-        <img
-          onclick="calculateAge()"
-          class="btn"
-          type="button"
-          src="assets/images/icon-arrow.svg"
-          alt="button icon"
-        />
-      </div>
+        <div class="btn-container">
+          <span class="line"></span>
+          <img
+            onclick="calculateAge()"
+            class="btn"
+            type="button"
+            src="assets/images/icon-arrow.svg"
+            alt="button icon"
+          />
+        </div>
 
-      <div class="output-container">
-        <div id="totalYears">
-          <h1 class="num-years">--</h1>
-          <h1 class="output">years</h1>
+        <div class="output-container">
+          <div id="totalYears">
+            <h1 class="num-years">--</h1>
+            <p class="output">years</p>
+          </div>
+          <div id="totalMonths">
+            <h1 class="num-months">--</h1>
+            <p class="output">months</p>
+          </div>
+          <div id="totalDays">
+            <h1 class="num-days">--</h1>
+            <p class="output">days</p>
+          </div>
         </div>
-        <div id="totalMonths">
-          <h1 class="num-months">--</h1>
-          <h1 class="output">months</h1>
-        </div>
-        <div id="totalDays">
-          <h1 class="num-days">--</h1>
-          <h1 class="output">days</h1>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script src="index.js"></script>
   </body>

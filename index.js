@@ -10,7 +10,7 @@ const yearOutput = document.querySelector("#totalYears");
 const numDays = document.querySelector(".num-days");
 const numMonths = document.querySelector(".num-months");
 const numYears = document.querySelector(".num-years");
-
+console.log(numYears);
 let currentTime = new Date();
 let currentDay = currentTime.getDate();
 let currentMonth = currentTime.getMonth() + 1;
@@ -63,6 +63,9 @@ function resetAlert(field) {
   field.nextElementSibling.innerHTML = "";
 }
 
+function addEffectToNum(field) {
+  field.classList.add("trans");
+}
 function resetInputs() {
   dayInput.value = null;
   monthInput.value = null;
@@ -158,8 +161,13 @@ function calculateAge() {
   if (isValidate) {
     renderDays(dayValue);
     renderMonthsYears(monthValue, yearValue);
+
     resetAlert(dayInput, monthInput, yearInput);
     resetInputs();
+
+    addEffectToNum(numDays);
+    addEffectToNum(numMonths);
+    addEffectToNum(numYears);
     isValidate = true;
   }
 }
